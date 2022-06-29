@@ -2,8 +2,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let local = event.target.children[0].textContent;
   let visitante = event.target.children[3].textContent;
-  let golesLocal = event.target.children[1].value;
-  let golesVisitante = event.target.children[2].value;
+  let golesLocal = +event.target.children[1].value;
+  let golesVisitante = +event.target.children[2].value;
 
   let ganoLocal = false;
   let empate = false;
@@ -39,9 +39,9 @@ function handleSubmit(event) {
         else if(empate) td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + +golesVisitante;
         else td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + +golesVisitante;
                                                                                                 //Goles a favor local
-        if(ganoLocal) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
-        else if(empate) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
-        else td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
+        if(ganoLocal)  td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesLocal;
+        else if(empate) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesLocal;
+        else  td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesLocal;
     }
 
 if (td.textContent.includes(visitante)) {
@@ -56,18 +56,18 @@ if (td.textContent.includes(visitante)) {
   else td.parentElement.children[8].textContent= +td.parentElement.children[8].textContent +3;
 
                                                                                                 //Goles a favor visitante
-  if(ganoLocal) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
-  else if(empate) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
-  else td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + +td.parentElement.children[7].textContent + +golesVisitante;
+  if(ganoLocal) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesVisitante;
+  else if(empate) td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesVisitante;
+  else td.parentElement.children[5].textContent = +td.parentElement.children[5].textContent + golesVisitante;
                                                                                                 //Diferencia de gol visitante
   if (ganoLocal) td.parentElement.children[7].textContent = +td.parentElement.children[7].textContent + golesVisitante - golesLocal;
   else if (empate) ;
   else td.parentElement.children[7].textContent = +td.parentElement.children[7].textContent + golesLocal - golesVisitante;
 
-                                                                                                //goloes en contra del visitante
-  if(ganoLocal) td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + +golesLocal;
-  else if(empate) td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + +golesLocal;
-  else td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + +golesLocal;
+                                                                                                //goles en contra del visitante
+  if(ganoLocal) td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + golesLocal;
+  else if(empate) td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + golesLocal;
+  else td.parentElement.children[6].textContent = +td.parentElement.children[6].textContent + golesLocal;
 }
 
     if (td.textContent.includes(local)|| td.textContent.includes (visitante)){
