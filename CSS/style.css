@@ -1,0 +1,44 @@
+h1{
+  text-align: center;
+}
+*{
+  background-color: #96305A;
+  color: white;
+}
+.tabla{
+  border: 0.5px solid black;
+}
+.tablas{
+  border: 0.5px solid black;
+  text-align: center;
+
+}
+.TablaGrupos{
+  margin: 20px;
+  border: 2px solid black;
+}
+#grupos{
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+.foto{
+text-align: center;
+}
+#titulo{
+  font-size: 50px;
+  color:  #d4ac0d;
+}
+h3{
+  text-align: justify;
+}
+.boton{
+  border: 3px solid black;
+}
+.Horario{
+  /* width: 190px;
+  height: 30px; */
+  background-color: gray;
+}
+.Jornada{
+  background-color: black;
+}
